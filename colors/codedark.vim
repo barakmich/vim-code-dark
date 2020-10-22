@@ -463,3 +463,11 @@ call <sid>hi('sqlOperator', s:cdPink, {}, 'none', {})
 call <sid>hi('yamlKey', s:cdBlue, {}, 'none', {})
 call <sid>hi('yamlConstant', s:cdBlue, {}, 'none', {})
 
+" Vim-Signify
+" ----
+hi SignifySignAdd          guifg=#80a090          guibg=#181818 gui=none
+hi SignifySignAdd          ctermfg=29             ctermbg=none   cterm=none
+hi SignifySignChange       guifg=#4a343a          guibg=#181818 gui=none
+hi SignifySignChange       ctermfg=100             ctermbg=none   cterm=none
+hi SignifySignDelete       guifg=#6c6661          guibg=#181818 gui=none
+hi SignifySignDelete       ctermfg=124             ctermbg=none   cterm=none
