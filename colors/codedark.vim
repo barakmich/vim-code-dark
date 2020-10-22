@@ -181,12 +181,12 @@ call <sid>hi('Float', s:cdLightGreen, {}, 'none', {})
 call <sid>hi('Identifier', s:cdLightBlue, {}, 'none', {})
 call <sid>hi('Function', s:cdYellow, {}, 'none', {})
 
-call <sid>hi('Statement', s:cdPink, {}, 'none', {})
-call <sid>hi('Conditional', s:cdPink, {}, 'none', {})
-call <sid>hi('Repeat', s:cdPink, {}, 'none', {})
-call <sid>hi('Label', s:cdPink, {}, 'none', {})
+call <sid>hi('Statement', s:cdBlue, {}, 'none', {})
+call <sid>hi('Conditional', s:cdBlue, {}, 'none', {})
+call <sid>hi('Repeat', s:cdBlue, {}, 'none', {})
+call <sid>hi('Label', s:cdBlue, {}, 'none', {})
 call <sid>hi('Operator', s:cdFront, {}, 'none', {})
-call <sid>hi('Keyword', s:cdPink, {}, 'none', {})
+call <sid>hi('Keyword', s:cdBlue, {}, 'none', {})
 call <sid>hi('Exception', s:cdPink, {}, 'none', {})
 
 call <sid>hi('PreProc', s:cdPink, {}, 'none', {})
@@ -386,7 +386,7 @@ call <sid>hi('goPackage', s:cdBlue, {}, 'none', {})
 call <sid>hi('goImport', s:cdBlue, {}, 'none', {})
 call <sid>hi('goVar', s:cdBlue, {}, 'none', {})
 call <sid>hi('goConst', s:cdBlue, {}, 'none', {})
-call <sid>hi('goStatement', s:cdPink, {}, 'none', {})
+call <sid>hi('goStatement', s:cdBlue, {}, 'none', {})
 call <sid>hi('goType', s:cdBlueGreen, {}, 'none', {})
 call <sid>hi('goSignedInts', s:cdBlueGreen, {}, 'none', {})
 call <sid>hi('goUnsignedInts', s:cdBlueGreen, {}, 'none', {})
@@ -394,7 +394,7 @@ call <sid>hi('goFloats', s:cdBlueGreen, {}, 'none', {})
 call <sid>hi('goComplexes', s:cdBlueGreen, {}, 'none', {})
 call <sid>hi('goBuiltins', s:cdYellow, {}, 'none', {})
 call <sid>hi('goBoolean', s:cdBlue, {}, 'none', {})
-call <sid>hi('goPredefinedIdentifiers', s:cdBlue, {}, 'none', {})
+call <sid>hi('goPredefinedIdentifiers', s:cdPink, {}, 'none', {})
 call <sid>hi('goTodo', s:cdGreen, {}, 'none', {})
 call <sid>hi('goDeclaration', s:cdBlue, {}, 'none', {})
 call <sid>hi('goDeclType', s:cdBlue, {}, 'none', {})
@@ -465,9 +465,7 @@ call <sid>hi('yamlConstant', s:cdBlue, {}, 'none', {})
 
 " Vim-Signify
 " ----
-hi SignifySignAdd          guifg=#80a090          guibg=#181818 gui=none
-hi SignifySignAdd          ctermfg=29             ctermbg=none   cterm=none
-hi SignifySignChange       guifg=#4a343a          guibg=#181818 gui=none
-hi SignifySignChange       ctermfg=100             ctermbg=none   cterm=none
-hi SignifySignDelete       guifg=#6c6661          guibg=#181818 gui=none
-hi SignifySignDelete       ctermfg=124             ctermbg=none   cterm=none
+
+call <sid>hi('SignifySignAdd', s:cdGreen, {}, 'none', {})
+call <sid>hi('SignifySignChange', s:cdYellowOrange, {}, 'none', {})
+call <sid>hi('SignifySignDelete', s:cdRed, {}, 'none', {})
