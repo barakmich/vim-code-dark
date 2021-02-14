@@ -107,6 +107,14 @@ if !exists("g:codedark_conservative")
     let g:codedark_conservative=0
 endif
 
+if !exists("g:codedark_null_background")
+  let g:codedark_null_background=0
+endif
+
+if g:codedark_null_background
+  let s:cdBack = {'gui': '#1E1E1E', 'cterm': 'NONE', 'cterm256': 'NONE'}
+endif
+
 let s:cdGray = {'gui': '#808080', 'cterm': s:cterm04, 'cterm256': '08'}
 let s:cdViolet = {'gui': '#646695', 'cterm': s:cterm04, 'cterm256': '60'}
 let s:cdBlue = {'gui': '#569CD6', 'cterm': s:cterm0D, 'cterm256': '75'}
