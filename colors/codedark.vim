@@ -477,3 +477,12 @@ call <sid>hi('yamlConstant', s:cdBlue, {}, 'none', {})
 call <sid>hi('SignifySignAdd', s:cdGreen, {}, 'none', {})
 call <sid>hi('SignifySignChange', s:cdYellowOrange, {}, 'none', {})
 call <sid>hi('SignifySignDelete', s:cdRed, {}, 'none', {})
+
+" nvim-lsp
+" ----
+
+call <sid>hi('LspDiagnosticsSignError', s:cdRed, {}, 'none', {})
+call <sid>hi('LspDiagnosticsSignWarning', s:cdYellow, {}, 'none', {})
+call <sid>hi('LspDiagnosticsSignInformation', s:cdGray, {}, 'none', {})
+call <sid>hi('LspDiagnosticsSignHint', s:cdBlue, {}, 'none', {})
+
