@@ -109,7 +109,7 @@ let s:cdSplitLight = {'gui': '#898989', 'cterm': s:cterm04, 'cterm256': '245'}
 let s:cdSplitDark = {'gui': '#444444', 'cterm': s:cterm03, 'cterm256': '238'}
 let s:cdSplitThumb = {'gui': '#424242', 'cterm': s:cterm04, 'cterm256': '238'}
 
-let s:cdCursorDarkDark = {'gui': '#222222', 'cterm': s:cterm01, 'cterm256': '235'}
+let s:cdCursorDarkDark = {'gui': '#2A2A2A', 'cterm': s:cterm01, 'cterm256': '236'}
 let s:cdCursorDark = {'gui': '#51504F', 'cterm': s:cterm03, 'cterm256': '239'}
 let s:cdCursorLight = {'gui': '#AEAFAD', 'cterm': s:cterm04, 'cterm256': '145'}
 let s:cdSelection = {'gui': '#264F78', 'cterm': s:cterm03, 'cterm256': '24'}
@@ -127,7 +127,8 @@ let s:cdDiffBlue = {'gui': '#005f87', 'cterm': s:cterm0D, 'cterm256': '24'}
 
 let s:cdSearchCurrent = {'gui': '#4B5632', 'cterm': s:cterm09, 'cterm256': '58'}
 if g:codedark_modern | let s:cdSearchCurrent = {'gui': '#9e6a03', 'cterm': s:cterm09, 'cterm256': '58'} | endif
-let s:cdSearch = {'gui': '#773800', 'cterm': s:cterm03, 'cterm256': '94'}
+"let s:cdSearch = {'gui': '#773800', 'cterm': s:cterm03, 'cterm256': '94'}
+let s:cdSearch = {'gui': '#264F78', 'cterm': s:cterm03, 'cterm256': '24'}
 
 " Syntax colors:
 
@@ -142,6 +143,7 @@ endif
 
 let s:cdGray = {'gui': '#808080', 'cterm': s:cterm04, 'cterm256': '08'}
 let s:cdViolet = {'gui': '#646695', 'cterm': s:cterm04, 'cterm256': '60'}
+let s:cdPurple = {'gui': '#AF87FF', 'cterm': s:cterm04, 'cterm256': '141'}
 let s:cdBlue = {'gui': '#569CD6', 'cterm': s:cterm0D, 'cterm256': '75'}
 let s:cdDarkBlue = {'gui': '#223E55', 'cterm': s:cterm0D, 'cterm256': '73'}
 let s:cdLightBlue = {'gui': '#9CDCFE', 'cterm': s:cterm0C, 'cterm256': '117'}
@@ -168,7 +170,7 @@ call <sid>hi('ColorColumn', {}, s:cdCursorDarkDark, 'none', {})
 call <sid>hi('Cursor', s:cdCursorDark, s:cdCursorLight, 'none', {})
 call <sid>hi('CursorLine', {}, s:cdCursorDarkDark, 'none', {})
 hi! link CursorColumn CursorLine
-call <sid>hi('Directory', s:cdBlue, s:cdNone, 'none', {})
+call <sid>hi('Directory', s:cdBlue, s:cdBack, 'none', {})
 call <sid>hi('DiffAdd', s:cdFront, s:cdDiffGreenLight, 'none', {})
 call <sid>hi('DiffChange', s:cdFront, s:cdDiffBlue, 'none', {})
 call <sid>hi('DiffDelete', s:cdFront, s:cdDiffRedLight, 'none', {})
@@ -192,7 +194,7 @@ call <sid>hi('PmenuSbar', {}, s:cdPopupHighlightGray, 'none', {})
 call <sid>hi('PmenuThumb', {}, s:cdPopupFront, 'none', {})
 call <sid>hi('Question', s:cdBlue, s:cdBack, 'none', {})
 call <sid>hi('Search', s:cdNone, s:cdSearch, 'none', {})
-call <sid>hi('SpecialKey', s:cdLineNumber, s:cdNone, 'none', {})
+call <sid>hi('SpecialKey', s:cdBlue, s:cdNone, 'none', {})
 call <sid>hi('StatusLine', s:cdFront, s:cdLeftMid, 'none', {})
 call <sid>hi('StatusLineNC', s:cdFront, s:cdLeftDark, 'none', {})
 call <sid>hi('TabLine', s:cdFront, s:cdTabOther, 'none', {})
@@ -221,12 +223,12 @@ call <sid>hi('Boolean', s:cdBlue, {}, 'none', {})
 hi! link Float Number
 call <sid>hi('Identifier', s:cdLightBlue, {}, 'none', {})
 call <sid>hi('Function', s:cdYellow, {}, 'none', {})
-call <sid>hi('Statement', s:cdPink, {}, 'none', {})
-call <sid>hi('Conditional', s:cdPink, {}, 'none', {})
-call <sid>hi('Repeat', s:cdPink, {}, 'none', {})
-call <sid>hi('Label', s:cdPink, {}, 'none', {})
+call <sid>hi('Statement', s:cdBlue, {}, 'none', {})
+call <sid>hi('Conditional', s:cdBlue, {}, 'none', {})
+call <sid>hi('Repeat', s:cdBlue, {}, 'none', {})
+call <sid>hi('Label', s:cdBlue, {}, 'none', {})
 call <sid>hi('Operator', s:cdFront, {}, 'none', {})
-call <sid>hi('Keyword', s:cdPink, {}, 'none', {})
+call <sid>hi('Keyword', s:cdBlue, {}, 'none', {})
 call <sid>hi('Exception', s:cdPink, {}, 'none', {})
 call <sid>hi('PreProc', s:cdPink, {}, 'none', {})
 call <sid>hi('Include', s:cdPink, {}, 'none', {})
@@ -245,7 +247,7 @@ if g:codedark_italics | call <sid>hi('SpecialComment', s:cdGreen, {}, 'italic', 
 call <sid>hi('Debug', s:cdFront, {}, 'none', {})
 call <sid>hi('Underlined', s:cdNone, {}, 'underline', {})
 call <sid>hi("Conceal", s:cdFront, s:cdBack, 'none', {})
-call <sid>hi('Ignore', s:cdBack, {}, 'none', {})
+call <sid>hi('Ignore', s:cdFront, {}, 'none', {})
 call <sid>hi('Error', s:cdRed, s:cdBack, 'undercurl', s:cdRed)
 call <sid>hi('Todo', s:cdNone, s:cdLeftMid, 'none', {})
 call <sid>hi('SpellBad', s:cdRed, s:cdBack, 'undercurl', s:cdRed)
@@ -451,7 +453,7 @@ call <sid>hi('VueKey', s:cdPink, {}, 'none', {})
 " Typescript:
 call <sid>hi('typescriptLabel', s:cdLightBlue, {}, 'none', {})
 call <sid>hi('typescriptTry', s:cdPink, {}, 'none', {})
-call <sid>hi('typescriptExceptions', s:cdPink, {}, 'none', {})
+call <sid>hi('typescriptExceptions', s:cdLightBlue, {}, 'none', {})
 call <sid>hi('typescriptBraces', s:cdFront, {}, 'none', {})
 call <sid>hi('typescriptEndColons', s:cdLightBlue, {}, 'none', {})
 call <sid>hi('typescriptParens', s:cdFront, {}, 'none', {})
@@ -534,7 +536,7 @@ call <sid>hi('goPackage', s:cdBlue, {}, 'none', {})
 call <sid>hi('goImport', s:cdBlue, {}, 'none', {})
 call <sid>hi('goVar', s:cdBlue, {}, 'none', {})
 call <sid>hi('goConst', s:cdBlue, {}, 'none', {})
-call <sid>hi('goStatement', s:cdPink, {}, 'none', {})
+call <sid>hi('goStatement', s:cdBlue, {}, 'none', {})
 call <sid>hi('goType', s:cdBlueGreen, {}, 'none', {})
 call <sid>hi('goSignedInts', s:cdBlueGreen, {}, 'none', {})
 call <sid>hi('goUnsignedInts', s:cdBlueGreen, {}, 'none', {})
@@ -542,7 +544,7 @@ call <sid>hi('goFloats', s:cdBlueGreen, {}, 'none', {})
 call <sid>hi('goComplexes', s:cdBlueGreen, {}, 'none', {})
 call <sid>hi('goBuiltins', s:cdYellow, {}, 'none', {})
 call <sid>hi('goBoolean', s:cdBlue, {}, 'none', {})
-call <sid>hi('goPredefinedIdentifiers', s:cdBlue, {}, 'none', {})
+call <sid>hi('goPredefinedIdentifiers', s:cdPink, {}, 'none', {})
 call <sid>hi('goTodo', s:cdGreen, {}, 'none', {})
 call <sid>hi('goDeclaration', s:cdBlue, {}, 'none', {})
 call <sid>hi('goDeclType', s:cdBlue, {}, 'none', {})
@@ -555,6 +557,17 @@ call <sid>hi('goReceiverType', s:cdFront, {}, 'none', {})
 call <sid>hi('goFunctionCall', s:cdYellow, {}, 'none', {})
 call <sid>hi('goMethodCall', s:cdYellow, {}, 'none', {})
 call <sid>hi('goSingleDecl', s:cdLightBlue, {}, 'none', {})
+
+
+" Rust:
+call <sid>hi('rustModPath', s:cdBlueGreen, {}, 'none', {})
+call <sid>hi('rustTSConstBuiltin', s:cdBlue, {}, 'none', {})
+call <sid>hi('rustTSFuncMacro', s:cdPink, {}, 'none', {})
+call <sid>hi('rustTSNamespace', s:cdPink, {}, 'none', {})
+call <sid>hi('rustTSPunctSpecial', s:cdYellowOrange, {}, 'none', {})
+call <sid>hi('@type.builtin.rust', s:cdBlue, {}, 'none', {})
+call <sid>hi('@variable.rust', s:cdFront, s:cdBack, 'none', {})
+call <sid>hi('@module.rust', s:cdDarkBlue, s:cdBack, 'none', {})"
 
 " Python:
 call <sid>hi('pythonStatement', s:cdBlue, {}, 'none', {})
@@ -655,3 +668,39 @@ call <sid>hi('LspCxxHlSymNamespace', s:cdSilver, {}, 'none', {})
 call <sid>hi('CocHighlightText', {}, s:cdSelection, 'none', {})
 call <sid>hi('CocExplorerIndentLine', s:cdCursorDark, {}, 'none', {})
 call <sid>hi('CocInlayHint', s:cdLineNumber, {}, 'none', {})
+
+" nvim-cmp
+call <sid>hi('CmpItemAbbrDeprecated', s:cdGray, {}, 'strikethrough', {})
+call <sid>hi('CmpItemAbbrMatch', s:cdBlue, {}, 'none', {})
+call <sid>hi('CmpItemAbbrMatchFuzzy', s:cdBlue, {}, 'none', {})
+call <sid>hi('CmpItemKindVariable', s:cdLightBlue, {}, 'none', {})
+call <sid>hi('CmpItemKindInterface', s:cdLightBlue, {}, 'none', {})
+call <sid>hi('CmpItemKindText', s:cdLightBlue, {}, 'none', {})
+call <sid>hi('CmpItemKindFunction', s:cdPink, {}, 'none', {})
+call <sid>hi('CmpItemKindMethod ', s:cdPink, {}, 'none', {})
+call <sid>hi('CmpItemKindKeyword', s:cdFront, {}, 'none', {})
+call <sid>hi('CmpItemKindProperty', s:cdFront, {}, 'none', {})
+call <sid>hi('CmpItemKindUnit', s:cdFront, {}, 'none', {})
+
+" Vim-Signify
+" ----
+
+call <sid>hi('SignifySignAdd', s:cdGreen, {}, 'none', {})
+call <sid>hi('SignifySignChange', s:cdYellowOrange, {}, 'none', {})
+call <sid>hi('SignifySignDelete', s:cdRed, {}, 'none', {})
+
+" nvim-lsp
+" ----
+
+call <sid>hi('LspDiagnosticsSignError', s:cdRed, {}, 'none', {})
+call <sid>hi('LspDiagnosticsSignWarning', s:cdYellow, {}, 'none', {})
+call <sid>hi('LspDiagnosticsSignInformation', s:cdGray, {}, 'none', {})
+call <sid>hi('LspDiagnosticsSignHint', s:cdBlue, {}, 'none', {})
+
+" Sneak
+" ____
+call <sid>hi('Sneak', {}, s:cdGray, 'undercurl', {})
+
+" Lir
+" ----
+call <sid>hi('LirDir', s:cdBlue, {}, 'none', {})
