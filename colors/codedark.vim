@@ -102,6 +102,7 @@ let s:cdLeftLight = {'gui': '#3F3F46', 'cterm': s:cterm03, 'cterm256': '238'}
 
 let s:cdPopupFront = {'gui': '#BBBBBB', 'cterm': s:cterm06, 'cterm256': '250'}
 let s:cdPopupBack = {'gui': '#2D2D30', 'cterm': s:cterm01, 'cterm256': '236'}
+"let s:cdPopupBack = {'gui': '#51504F', 'cterm': s:cterm03, 'cterm256': '239'}
 let s:cdPopupHighlightBlue = {'gui': '#073655', 'cterm': s:cterm0D, 'cterm256': '24'}
 let s:cdPopupHighlightGray = {'gui': '#3D3D40', 'cterm': s:cterm03, 'cterm256': '237'}
 
@@ -166,6 +167,7 @@ let s:cdSilver = {'gui': '#C0C0C0', 'cterm': s:cterm05, 'cterm256': '7'}
 " UI (built-in)
 "    <sid>hi(GROUP, FOREGROUND, BACKGROUND, ATTRIBUTE, SPECIAL)
 call <sid>hi('Normal', s:cdFront, s:cdBack, 'none', {})
+call <sid>hi('NormalFloat', s:cdFront, s:cdPopupBack, 'none', {})
 call <sid>hi('ColorColumn', {}, s:cdCursorDarkDark, 'none', {})
 call <sid>hi('Cursor', s:cdCursorDark, s:cdCursorLight, 'none', {})
 call <sid>hi('CursorLine', {}, s:cdCursorDarkDark, 'none', {})
@@ -557,17 +559,21 @@ call <sid>hi('goReceiverType', s:cdFront, {}, 'none', {})
 call <sid>hi('goFunctionCall', s:cdYellow, {}, 'none', {})
 call <sid>hi('goMethodCall', s:cdYellow, {}, 'none', {})
 call <sid>hi('goSingleDecl', s:cdLightBlue, {}, 'none', {})
+call <sid>hi('@lsp.type.namespace.go', s:cdPurple, {}, 'none', {})
+call <sid>hi('@type.go', s:cdBlueGreen, {}, 'none', {})
+call <sid>hi('@type.builtin.go', s:cdBlue, {}, 'none', {})
 
 
 " Rust:
-call <sid>hi('rustModPath', s:cdBlueGreen, {}, 'none', {})
+call <sid>hi('rustModPath', s:cdBlueGreen, s:cdBack, 'none', {})
 call <sid>hi('rustTSConstBuiltin', s:cdBlue, {}, 'none', {})
 call <sid>hi('rustTSFuncMacro', s:cdPink, {}, 'none', {})
 call <sid>hi('rustTSNamespace', s:cdPink, {}, 'none', {})
 call <sid>hi('rustTSPunctSpecial', s:cdYellowOrange, {}, 'none', {})
 call <sid>hi('@type.builtin.rust', s:cdBlue, {}, 'none', {})
 call <sid>hi('@variable.rust', s:cdFront, s:cdBack, 'none', {})
-call <sid>hi('@module.rust', s:cdDarkBlue, s:cdBack, 'none', {})"
+call <sid>hi('@module.rust', s:cdBlueGreen, s:cdBack, 'none', {})"
+call <sid>hi('@type.rust', s:cdPurple, {}, 'none', {})
 
 " Python:
 call <sid>hi('pythonStatement', s:cdBlue, {}, 'none', {})
